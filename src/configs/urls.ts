@@ -1,9 +1,19 @@
-const baseURL = 'http://localhost:5003/'
+const baseURL = process.env.REACT_APP_API
+
 
 const urls = {
-    users: '/users',
-    containers: '/containers',
-    stages: '/stages',
+    users:{
+        base: '/users',
+        byId: (id: number): string => `${urls.users.base}/${id}`
+    },
+
+    containers:{
+        base: '/containers',
+        byId: (id: number): string => `${urls.containers.base}/${id}`
+    },
+
+    // containers: '/containers',
+    // stages: '/stages',
 
 }
 
